@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Join PrimeHub Server</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      const url = new URL(window.location.href);
+      const placeId = url.searchParams.get("placeId");
+      const jobId = url.searchParams.get("gameInstanceId");
+
+      if (placeId && jobId) {
+        const robloxLink = `roblox://placeId=${placeId}&gameInstanceId=${jobId}`;
+        window.location.href = robloxLink;
+      } else {
+        document.body.innerHTML = "<h2>Missing placeId or gameInstanceId</h2>";
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
